@@ -13,64 +13,94 @@ import {
 } from "@/components/ui/carousel"
 import { Modal } from "@/components/modals/page"
 import { DarkMode } from "@/components/darkTheme/page"
+import { data } from "@/libs/data/source"
 
+interface DZKRDATATYPE {
+    id: number,
+    arabic: string,
+    arabic_latin: string,
+    faedah: string,
+    narrator: string,
+    note: string,
+    title: string,
+    translated_id: string,
+    time: string,
+}
 const Home = () => {
     const [api, setApi] = React.useState<CarouselApi>()
-    // const [current, setCurrent] = React.useState(0)
-    // const [count, setCount] = React.useState(0)
+    const [current, setCurrent] = React.useState(0)
+    const [count, setCount] = React.useState(0)
+    const [dzikr, setDzikr] = React.useState<DZKRDATATYPE[]>()
 
     React.useEffect(() => {
+        setDzikr(data.dzikr)
         if (!api) {
             return
         }
 
-        // setCount(api.scrollSnapList().length)
-        // setCurrent(api.selectedScrollSnap() + 1)
+        setCount(api.scrollSnapList().length)
+        setCurrent(api.selectedScrollSnap() + 1)
 
-        // api.on("select", () => {
-        //     setCurrent(api.selectedScrollSnap() + 1)
-        // })
-    }, [api])
+        api.on("select", () => {
+            setCurrent(api.selectedScrollSnap() + 1)
+        })
+    }, [api]);
+
+    // const dzkrArray = Object.values(dzikr)
+    const morningDzkr = dzikr?.filter((item: DZKRDATATYPE) => item.time === "" || item.time === "pagi")
 
 
     return (
-        <div className='flex items-center justify-items-center min-h-screen p-4 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]'>
+        <div className='flex flex-col items-center justify-items-center min-h-screen p-4 pb-20 gap-4 sm:p-20 font-[family-name:var(--font-geist-sans)]'>
 
+            <div className="flex item-center justify-center w-full">
+                <div className="w-full text-center text-lg font-semibold text-gray-600 dark:text-gray-400">Dzikir Pagi</div>
+            </div>
             <div className="mx-auto max-w-xs my-auto">
                 <Carousel
                     setApi={setApi}
                     className="w-full max-w-xs"
                     opts={{
-                        loop: true
+                        loop: true,
+                        inViewThreshold: 1
                     }}
                 >
                     <CarouselContent>
-                        {Array.from({ length: 5 }).map((_, index) => (
+                        {morningDzkr?.map((item: DZKRDATATYPE, index) => (
                             <CarouselItem key={index}>
                                 <Card>
                                     <div className="flex justify-between items-center px-4 mt-4">
-                                        <span className="text-sm font-semibold text-gray-600 dark:text-gray-300">Membaca Ayat Kursi</span>
+                                        <span className="text-sm font-semibold text-gray-600 dark:text-gray-300">{item.title}</span>
                                         <DarkMode />
                                     </div>
                                     <CardContent className="flex flex-col h-[390px] items-center justify-center p-4">
-                                        <p className="text-xl font-normal text-justify" style={{ direction: "rtl" }}>اللَّهُ لاَ إِلَهَ إِلاَّ هُوَ الْحَيُّ الْقَيُّومُ، لاَ تَأْخُذُهُ سِنَةٌ وَلاَ نَوْمٌ، لَهُ مَا فِي السَّمَاوَاتِ وَمَا فِي الْأَرْضِ، مَنْ ذَا الَّذِي يَشْفَعُ عِنْدَهُ إِلاَّ بِإِذْنِهِ، يَعْلَمُ مَا بَيْنَ أَيْدِيهِمْ وَمَا خَلْفَهُمْ، وَلَا يُحِيطُونَ بِشَيْءٍ مِنْ عِلْمِهِ إِلاَّ بِمَا شَاءَ، وَسِعَ كُرْسِيُّهُ السَّمَاوَاتِ وَالْأَرْضَ، وَلَا يَئُودُهُ حِفْظُهُمَا، وَهُوَ الْعَلِيُّ الْعَظِيمُ</p>
+                                        {item.arabic.split('\n').map((line, lineIndex) => (
+                                            <p
+                                                key={lineIndex}
+                                                className="text-2xl font-normal text-justify mb-4"
+                                                style={{ direction: "rtl" }}
+                                            >
+                                                {line}
+                                            </p>
+                                        ))}
                                     </CardContent>
                                     <div className="flex justify-between items-center px-4 mb-4">
-                                        <span className="text-sm text-gray-600 dark:text-gray-300">Dibaca 1x</span>
+                                        <span className="text-sm text-gray-600 dark:text-gray-300">{item.note}</span>
                                         <Modal />
                                     </div>
                                 </Card>
                             </CarouselItem>
                         ))}
                     </CarouselContent>
-                    {/* <CarouselPrevious />
-                    <CarouselNext /> */}
                 </Carousel>
-                {/* <div className="py-2 text-center text-sm text-muted-foreground">
-                    Slide {current} of {count}
-                </div> */}
+                <div className="py-2 text-center text-sm text-muted-foreground">
+                    Dzikir {current} dari {count}
+                </div>
             </div>
-
+            {/* Buttom Bar  */}
+            {/* <div className="flex item-center justify-center gap-2 bg-yellow-100 w-screen">
+                <div className="w-4 h-4 bg-gray-400">✅</div>
+            </div> */}
         </div>
     )
 }
