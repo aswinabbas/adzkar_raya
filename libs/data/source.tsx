@@ -22,8 +22,8 @@ export const data = {
             faedah:
                 'Siapa yang mengucapkannya masing-masing tiga kali ketika pagi dan petang, maka segala sesuatu akan dicukupkan untuknya. [HR. Abu Daud no. 5082, Tirmidzi no. 3575. Al Hafizh Abu Thohir mengatakan bahwa sanad hadits ini hasan]',
             narrator: 'Q.S. Al Ikhlas: 1-4@Q.S. Al Falaq: 1-5@QS. An Naas: 1-6',
-            note: '@ Dibaca 3x',
-            title: 'Membaca Surah Al-Ikhlas, Al-Falaq dan An-Nas',
+            note: 'Dibaca 3x',
+            title: 'Membaca Surah Al-Ikhlas',
             translated_id:
                 'Dengan menyebut nama Allah Yang Maha Pengasih lagi Maha Penyayang. Katakanlah: Dialah Allah, Yang Maha Esa. Allah adalah ilah yang bergantung kepada-Nya segala urusan. Dia tidak beranak dan tiada pula diperanakkan, dan tidak ada seorang pun yang setara dengan Dia.',
             time: '',
@@ -36,8 +36,8 @@ export const data = {
             faedah:
                 'Siapa yang mengucapkannya masing-masing tiga kali ketika pagi dan petang, maka segala sesuatu akan dicukupkan untuknya. [HR. Abu Daud no. 5082, Tirmidzi no. 3575. Al Hafizh Abu Thohir mengatakan bahwa sanad hadits ini hasan]',
             narrator: 'Q.S. Al Ikhlas: 1-4@Q.S. Al Falaq: 1-5@QS. An Naas: 1-6',
-            note: '@ Dibaca 3x',
-            title: 'Membaca Surah Al-Ikhlas, Al-Falaq dan An-Nas',
+            note: 'Dibaca 3x',
+            title: 'Membaca Surah Al-Falaq',
             translated_id:
                 'Dengan menyebut nama Allah Yang Maha Pengasih lagi Maha Penyayang.Dengan menyebut nama Allah Yang Maha Pengasih lagi Maha Penyayang. Katakanlah: Aku berlindung kepada Rabb yang menguasai Shubuh, dari kejahatan makhluk-Nya, dan dari kejahatan malam apabila telah gelap gulita, dan dari kejahatan-kejahatan wanita tukang sihir yang menghembus pada buhul-buhul, dan dari kejahatan orang yang dengki apabila ia dengki.',
             time: '',
@@ -50,8 +50,8 @@ export const data = {
             faedah:
                 'Siapa yang mengucapkannya masing-masing tiga kali ketika pagi dan petang, maka segala sesuatu akan dicukupkan untuknya. [HR. Abu Daud no. 5082, Tirmidzi no. 3575. Al Hafizh Abu Thohir mengatakan bahwa sanad hadits ini hasan]',
             narrator: 'Q.S. Al Ikhlas: 1-4@Q.S. Al Falaq: 1-5@QS. An Naas: 1-6',
-            note: '@ Dibaca 3x',
-            title: 'Membaca Surah Al-Ikhlas, Al-Falaq dan An-Nas',
+            note: 'Dibaca 3x',
+            title: 'Membaca Surah An-Nas',
             translated_id:
                 'Dengan menyebut nama Allah Yang Maha Pengasih lagi Maha Penyayang. Dengan menyebut nama Allah Yang Maha Pengasih lagi Maha Penyayang. Katakanlah: Aku berlindung kepada Rabb manusia. Raja manusia. Sembahan manusia, dari kejahatan (bisikan) syaitan yang biasa bersembunyi, yang membisikkan (kejahatan) ke dalam dada manusia, dari jin dan manusia.',
             time: '',
@@ -270,7 +270,7 @@ export const data = {
             arabic_latin:
                 'Laa ilaha illallah wahdahu laa syarika lah, lahul mulku walahul hamdu wa huwa ‘ala kulli syai-in qodiir.',
             faedah:
-                '<b>Faedah jika dibaca 1 atau 10 kali</b>\nBarangsiapa yang membaca dzikir tersebut di pagi hari sebanyak sepuluh kali, Allah akan mencatatkan baginya 10 kebaikan, menghapuskan baginya 10 kesalahan, ia juga mendapatkan kebaikan semisal memerdekakan 10 budak, Allah akan melindunginya dari gangguan setan hingg petang hari. Siapa yang mengucapkannya di petang hari, ia akan mendapatkan keutamaan semisal itu pula. [HR. An Nasai Al Kubra 6:10]\n<br />\n<b>Faedah jika dibaca 100 kali dalam sehari</b>Barangsiapa yang mengucapkan dzikir tersebut dalam sehari sebanyak seratus kali, maka itu seperti membebaskan 10 orang budak, dicatat baginya 100 kebaikan, dihapus baginya 100 kesalahan, dirinya akan terjaga dari gangguan setan dari pagi hingga petang hari, dan tidak ada seorang pun yang lebih baik dari yang ia lakukan kecuali oleh orang yang mengamalkan lebih dari itu. [HR. Bukhari no. 3293 dan Muslim no. 2691]',
+                '<b>Faedah jika dibaca 1 atau 10 kali</b>\nBarangsiapa yang membaca dzikir tersebut di pagi hari sebanyak sepuluh kali, Allah akan mencatatkan baginya 10 kebaikan, menghapuskan baginya 10 kesalahan, ia juga mendapatkan kebaikan semisal memerdekakan 10 budak, Allah akan melindunginya dari gangguan setan hingg petang hari. Siapa yang mengucapkannya di petang hari, ia akan mendapatkan keutamaan semisal itu pula. [HR. An Nasai Al Kubra 6:10]\n<br />\n<b>Faedah jika dibaca 100 kali dalam sehari</b>\nBarangsiapa yang mengucapkan dzikir tersebut dalam sehari sebanyak seratus kali, maka itu seperti membebaskan 10 orang budak, dicatat baginya 100 kebaikan, dihapus baginya 100 kesalahan, dirinya akan terjaga dari gangguan setan dari pagi hingga petang hari, dan tidak ada seorang pun yang lebih baik dari yang ia lakukan kecuali oleh orang yang mengamalkan lebih dari itu. [HR. Bukhari no. 3293 dan Muslim no. 2691]',
             narrator: '',
             note: 'Dibaca 10x',
             title: 'Bertauhid',

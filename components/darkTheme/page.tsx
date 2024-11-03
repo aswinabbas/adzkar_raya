@@ -16,7 +16,7 @@ export function DarkMode() {
     const isLightMode = resolvedTheme !== "dark";
 
     return (
-        <Button variant="outline" size="icon" onClick={handleTheme}>
+        <Button variant="ghost" size="icon" onClick={handleTheme}>
             {isLightMode ? (
                 <SunIcon className="h-[1.2rem] w-[1.2rem] transition-transform transform rotate-0 scale-100" />
             ) : (

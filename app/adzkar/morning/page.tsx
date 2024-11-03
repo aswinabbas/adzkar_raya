@@ -14,6 +14,9 @@ import {
 import { Modal } from "@/components/modals/page"
 import { DarkMode } from "@/components/darkTheme/page"
 import { data } from "@/libs/data/source"
+import Link from "next/link"
+import { Button } from "@/components/ui/button"
+import { ArrowLeftIcon } from "@radix-ui/react-icons"
 
 interface DZKRDATATYPE {
     id: number,
@@ -46,62 +49,73 @@ const Home = () => {
         })
     }, [api]);
 
-    // const dzkrArray = Object.values(dzikr)
     const morningDzkr = dzikr?.filter((item: DZKRDATATYPE) => item.time === "" || item.time === "pagi")
 
 
     return (
-        <div className='flex flex-col items-center justify-items-center min-h-screen p-4 pb-20 gap-4 sm:p-20 font-[family-name:var(--font-geist-sans)]'>
+        <>
+            <div className='flex flex-col items-center justify-items-center min-h-screen p-4 pb-20 gap-4 sm:p-20 font-[family-name:var(--font-geist-sans)]'>
 
-            <div className="flex item-center justify-center w-full">
-                <div className="w-full text-center text-lg font-semibold text-gray-600 dark:text-gray-400">Dzikir Pagi</div>
-            </div>
-            <div className="mx-auto max-w-xs my-auto">
-                <Carousel
-                    setApi={setApi}
-                    className="w-full max-w-xs"
-                    opts={{
-                        loop: true,
-                        inViewThreshold: 1
-                    }}
-                >
-                    <CarouselContent>
-                        {morningDzkr?.map((item: DZKRDATATYPE, index) => (
-                            <CarouselItem key={index}>
-                                <Card>
-                                    <div className="flex justify-between items-center px-4 mt-4">
-                                        <span className="text-sm font-semibold text-gray-600 dark:text-gray-300">{item.title}</span>
-                                        <DarkMode />
-                                    </div>
-                                    <CardContent className="flex flex-col h-[390px] items-center justify-center p-4">
-                                        {item.arabic.split('\n').map((line, lineIndex) => (
-                                            <p
-                                                key={lineIndex}
-                                                className="text-2xl font-normal text-justify mb-4"
-                                                style={{ direction: "rtl" }}
-                                            >
-                                                {line}
-                                            </p>
-                                        ))}
-                                    </CardContent>
-                                    <div className="flex justify-between items-center px-4 mb-4">
-                                        <span className="text-sm text-gray-600 dark:text-gray-300">{item.note}</span>
-                                        <Modal />
-                                    </div>
-                                </Card>
-                            </CarouselItem>
-                        ))}
-                    </CarouselContent>
-                </Carousel>
-                <div className="py-2 text-center text-sm text-muted-foreground">
-                    Dzikir {current} dari {count}
+                <div className="flex item-center justify-center w-full">
+                    <Link href={"/"}>
+                        <Button variant="ghost" size={"icon"}>
+                            <ArrowLeftIcon />
+                        </Button>
+                    </Link>
+                    <div className="w-full text-center text-lg font-semibold text-gray-600 dark:text-gray-400">Dzikir Pagi</div>
+                    <DarkMode />
+                </div>
+                <div className="mx-auto max-w-xs my-auto">
+                    <Carousel
+                        setApi={setApi}
+                        className="w-full max-w-xs"
+                        opts={{
+                            loop: true,
+                            inViewThreshold: 1
+                        }}
+                    >
+                        <CarouselContent>
+                            {morningDzkr?.map((item: DZKRDATATYPE, index) => (
+                                <CarouselItem key={index}>
+                                    <Card>
+                                        <div className="flex flex-col px-4 mt-4">
+                                            <span className="text-sm font-semibold text-gray-600 dark:text-gray-300">{item.title}</span>
+                                            <span className="text-sm text-gray-600 dark:text-gray-300">{item.note}</span>
+                                            {/* <DarkMode /> */}
+                                        </div>
+                                        <CardContent className="flex flex-col h-[390px] items-center justify-center p-4">
+                                            {item.arabic.split('\n').map((line, lineIndex) => (
+                                                <p
+                                                    key={lineIndex}
+                                                    className="text-2xl font-normal text-justify mb-4"
+                                                    style={{ direction: "rtl" }}
+                                                >
+                                                    {line}
+                                                </p>
+                                            ))}
+                                        </CardContent>
+                                        <div className="flex justify-between items-center px-4 mb-4">
+                                            <span className="text-sm text-gray-600 dark:text-gray-300">{item.note}</span>
+                                            <Modal makna={item.translated_id} keutamaan={item.faedah} />
+                                        </div>
+                                    </Card>
+                                </CarouselItem>
+                            ))}
+                        </CarouselContent>
+                    </Carousel>
+                    <div className="py-2 text-center text-sm text-muted-foreground">
+                        Dzikir {current} dari {count}
+                    </div>
                 </div>
             </div>
-            {/* Buttom Bar  */}
-            {/* <div className="flex item-center justify-center gap-2 bg-yellow-100 w-screen">
-                <div className="w-4 h-4 bg-gray-400">✅</div>
+            {/* <div className="fixed bottom-4 right-4">
+                <Link href={"/"}>
+                    <Button variant="ghost" size={"lg"}>
+                        <HomeIcon className="h-20 w-h-20" />
+                    </Button>
+                </Link>
             </div> */}
-        </div>
+        </>
     )
 }
 

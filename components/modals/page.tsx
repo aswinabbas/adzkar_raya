@@ -11,7 +11,14 @@ import {
 } from "@/components/ui/dialog"
 import { ReaderIcon } from "@radix-ui/react-icons"
 
-export function Modal() {
+interface PROPSDATATYPE {
+    makna: string,
+    keutamaan: string
+}
+
+export function Modal(props: PROPSDATATYPE) {
+    const { makna, keutamaan } = props;
+
     return (
         <Dialog>
             <DialogTrigger asChild>
@@ -25,14 +32,20 @@ export function Modal() {
                     <DialogTitle className="text-sm text-slate-700 dark:text-slate-300">Makna</DialogTitle>
                 </DialogHeader>
                 <div className="flex flex-col gap-2 items-center justify-center py-4 -mt-6">
-                    <span className="text-justify text-sm">
-                        Allah, tidak ada ilah (yang berhak disembah) melainkan Dia, yang hidup kekal lagi terus menerus mengurus (makhluk-Nya). Dia tidak mengantuk dan tidak tidur. Kepunyaan-Nya apa yang di langit dan di bumi. Tiada yang dapat memberi syafa’at di sisi-Nya tanpa seizin-Nya. Dia mengetahui apa-apa yang di hadapan mereka dan di belakang mereka. Mereka tidak mengetahui apa-apa dari ilmu Allah melainkan apa yang dikehendaki-Nya. Kursi Allah meliputi langit dan bumi. Dia tidak merasa berat memelihara keduanya. Dan Dia Maha Tinggi lagi Maha besar.
+                    <span className="text-justify text-sm max-h-64 overflow-y-auto">
+                        {makna}
                     </span>
                     <hr />
                     <div className="flex flex-col gap-1">
                         <span className="text-sm font-semibold text-slate-700 dark:text-slate-300">Keutamaan</span>
-                        <DialogDescription className="italic text-justify dark:text-gray-300">
-                            Siapa yang membacanya ketika petang, maka ia akan dilindungi (oleh Allah dari berbagai gangguan) hingga pagi. Siapa yang membacanya ketika pagi, maka ia akan dilindungi hingga petang. [HR. Al Hakim (1: 562). Syaikh Al Albani menshahihkan hadits tersebut dalam Shahih At Targhib wa At Tarhib no. 655]
+                        <DialogDescription className="italic text-justify dark:text-gray-300 max-h-56 overflow-y-auto">
+                            {keutamaan.split("\n").map((line, index) => (
+                                <p
+                                    key={index}
+                                    className="mb-2"
+                                    dangerouslySetInnerHTML={{ __html: line }}
+                                />
+                            ))}
                         </DialogDescription>
                     </div>
                 </div>
