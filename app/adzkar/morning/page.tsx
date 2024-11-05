@@ -7,8 +7,6 @@ import {
     Carousel,
     CarouselContent,
     CarouselItem,
-    // CarouselNext,
-    // CarouselPrevious,
     type CarouselApi,
 } from "@/components/ui/carousel"
 import { Modal } from "@/components/modals/page"
@@ -54,9 +52,9 @@ const Home = () => {
 
     return (
         <>
-            <div className='flex flex-col items-center justify-items-center min-h-screen p-4 pb-20 gap-4 sm:p-20 font-[family-name:var(--font-geist-sans)]'>
+            <div className='flex flex-col items-center justify-items-center min-h-screen overflow-hidden p-4 pb-20 gap-4 sm:p-20 font-[family-name:var(--font-geist-sans)]'>
 
-                <div className="flex item-center justify-center w-full">
+                <div className="flex item-center justify-center w-full px-16">
                     <Link href={"/"}>
                         <Button variant="ghost" size={"icon"}>
                             <ArrowLeftIcon />
@@ -77,11 +75,10 @@ const Home = () => {
                         <CarouselContent>
                             {morningDzkr?.map((item: DZKRDATATYPE, index) => (
                                 <CarouselItem key={index}>
-                                    <Card>
+                                    <Card >
                                         <div className="flex flex-col px-4 mt-4">
                                             <span className="text-sm font-semibold text-gray-600 dark:text-gray-300">{item.title}</span>
-                                            <span className="text-sm text-gray-600 dark:text-gray-300">{item.note}</span>
-                                            {/* <DarkMode /> */}
+                                            <span className="text-sm text-gray-600 dark:text-gray-300 dark:opacity-50">{item.note}</span>
                                         </div>
                                         <CardContent className="flex flex-col h-[390px] items-center justify-center p-4">
                                             {item.arabic.split('\n').map((line, lineIndex) => (
@@ -95,7 +92,9 @@ const Home = () => {
                                             ))}
                                         </CardContent>
                                         <div className="flex justify-between items-center px-4 mb-4">
-                                            <span className="text-sm text-gray-600 dark:text-gray-300">{item.note}</span>
+                                            <div className="py-2 text-center text-xs text-gray-400 opacity-50 text-muted-foreground">
+                                                Dzikir {current} dari {count} -&gt;
+                                            </div>
                                             <Modal makna={item.translated_id} keutamaan={item.faedah} />
                                         </div>
                                     </Card>
@@ -103,18 +102,8 @@ const Home = () => {
                             ))}
                         </CarouselContent>
                     </Carousel>
-                    <div className="py-2 text-center text-sm text-muted-foreground">
-                        Dzikir {current} dari {count}
-                    </div>
                 </div>
             </div>
-            {/* <div className="fixed bottom-4 right-4">
-                <Link href={"/"}>
-                    <Button variant="ghost" size={"lg"}>
-                        <HomeIcon className="h-20 w-h-20" />
-                    </Button>
-                </Link>
-            </div> */}
         </>
     )
 }

@@ -1,8 +1,6 @@
-import React from "react";
-import { Button } from '@/components/ui/button'
-import { MoonIcon, SunIcon } from '@radix-ui/react-icons'
-import Link from 'next/link'
-import { MovingCards } from "../movingCards/page";
+import { Button } from '@/components/ui/button';
+import { MoonIcon, SunIcon } from '@radix-ui/react-icons';
+import Link from 'next/link';
 
 export const DotBackground = () => {
     return (
@@ -11,9 +9,6 @@ export const DotBackground = () => {
             <div className="absolute pointer-events-none inset-0 flex items-center justify-center dark:bg-black bg-white [mask-image:radial-gradient(ellipse_at_center,transparent_20%,black)]">
             </div>
             <div className="flex flex-col gap-2">
-                {/* <p className="text-4xl sm:text-7xl font-bold relative z-20 bg-clip-text text-transparent bg-gradient-to-b from-neutral-200 to-neutral-500 py-8">
-                    Adzkar
-                </p> */}
 
                 <div className='flex items-center justify-center gap-4 h-svh w-svw'>
                     <Link href={"/adzkar/morning"}>
@@ -27,8 +22,6 @@ export const DotBackground = () => {
                         </Button>
                     </Link>
                 </div>
-
-                {/* <MovingCards /> */}
             </div>
 
         </div>
