@@ -54,7 +54,7 @@ const Home = () => {
         <>
             <div className='flex flex-col items-center justify-items-center min-h-screen overflow-hidden p-4 pb-20 gap-4 sm:p-20 font-[family-name:var(--font-geist-sans)]'>
 
-                <div className="flex item-center justify-center w-full px-16">
+                <div className="flex item-center justify-center w-full px-2">
                     <Link href={"/"}>
                         <Button variant="ghost" size={"icon"}>
                             <ArrowLeftIcon />

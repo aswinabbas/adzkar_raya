@@ -2,9 +2,6 @@ import { DarkMode } from '@/components/darkTheme/page'
 import ButtonDzikr from '@/components/main/buttonDzikr/page'
 import MainFooter from '@/components/main/mainFooter/page'
 import MainTitle from '@/components/main/mainTitle/page'
-import { EveningIcon } from '@/libs/icons/moon/page'
-import { MorningIcon } from '@/libs/icons/morning/page'
-import Link from 'next/link'
 
 const Home = () => {
   const isFriday = new Date().getDay() === 5;
@@ -22,10 +19,10 @@ const Home = () => {
       </div>
 
       {/* Title - Centered in the middle */}
-      <MainTitle />
-
-      {/* Button Dzikir - Positioned fixed at the bottom */}
-      <ButtonDzikr />
+      <div className="flex flex-col items-center justify-between gap-20 z-30">
+        <MainTitle />
+        <ButtonDzikr />
+      </div>
 
       {/* Footer  */}
       <MainFooter />

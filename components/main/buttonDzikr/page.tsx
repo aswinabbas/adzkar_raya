@@ -5,7 +5,7 @@ import React from 'react'
 
 const ButtonDzikr = () => {
     return (
-        <div className="flex fixed bottom-40 left-1/2 transform -translate-x-1/2 items-center justify-center gap-4">
+        <div className="flex justify-center items-center gap-4 mt-auto">
             <Link href={"/adzkar/morning"} className="bg-gray-100 dark:bg-gray-400 p-4 rounded-md">
                 <div className="flex flex-col gap-1 items-center">
                     <MorningIcon />
