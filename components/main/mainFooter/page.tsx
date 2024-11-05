@@ -17,7 +17,7 @@ const MainFooter = () => {
             <span className='flex text-xs justify-center text-gray-400 font-light'>
                 <GitHubLogoIcon />
                 <a
-                    href="https://github.com/aswinabbas?tab=repositories"
+                    href="https://github.com/aswinabbas/adzkar_raya"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="text-gray-400 underline ml-1"
