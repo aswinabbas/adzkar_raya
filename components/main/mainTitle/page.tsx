@@ -6,7 +6,11 @@ const MainTitle = () => {
             <div className="flex items-center justify-center">
                 <div className="flex flex-col items-center justify-center">
                     {/* Title */}
-                    <h1 className="text-4xl font-semibold text-gray-700 dark:text-gray-300">Adzkarraya</h1>
+                    <h1 className="text-4xl font-semibold text-gray-700 dark:text-gray-300">Adzkar</h1>
+                    <div className="absolute">
+
+                        <h1 className="text-[10px] relative font-semibold bg-gray-300 dark:bg-gray-500 px-1 rounded-sm text-gray-500 dark:text-gray-300 -top-9 left-11">raya</h1>
+                    </div>
                     <h2 className="text-base font-light text-gray-400 dark:opacity-50">Dzikir Pagi dan Petang</h2>
 
                     {/* Gradients */}

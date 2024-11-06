@@ -3,7 +3,7 @@ import React from 'react'
 
 const MainFooter = () => {
     return (
-        <div className="flex flex-col justify-start fixed bottom-5 left-5 gap-1">
+        <div className="flex flex-col justify-start bottom-0 left-5 gap-1">
             <span className='text-xs text-gray-400 font-light'>🇵🇸 Yuk donasi untuk Palestina
                 <a
                     href="https://donasi.wiz.or.id/campaign/peduli-palestina"

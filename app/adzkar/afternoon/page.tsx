@@ -14,7 +14,7 @@ import { DarkMode } from "@/components/darkTheme/page"
 import { data } from "@/libs/data/source"
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
-import { ArrowLeftIcon } from "@radix-ui/react-icons"
+import { ArrowLeftIcon, ArrowRightIcon } from "@radix-ui/react-icons"
 
 interface DZKRDATATYPE {
     id: number,
@@ -92,7 +92,12 @@ const Home = () => {
                                     </CardContent>
                                     <div className="flex justify-between items-center px-4 mb-4">
                                         <div className="py-2 text-center text-xs text-gray-400 opacity-50 text-muted-foreground">
-                                            Dzikir {current} dari {count} -&gt;
+                                            <div className="flex gap-2">
+                                                <span>
+                                                    Dzikir {current} dari {count}
+                                                </span>
+                                                <ArrowRightIcon />
+                                            </div>
                                         </div>
                                         <Modal makna={item.translated_id} keutamaan={item.faedah} />
                                     </div>
