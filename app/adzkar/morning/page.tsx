@@ -84,7 +84,7 @@ const Home = () => {
                                             {item.arabic.split('\n').map((line, lineIndex) => (
                                                 <p
                                                     key={lineIndex}
-                                                    className="text-2xl font-normal text-justify mb-4"
+                                                    className="text-2xl font-normal text-justify mb-2 leading-10 overflow-y-auto"
                                                     style={{ direction: "rtl" }}
                                                 >
                                                     {line}
