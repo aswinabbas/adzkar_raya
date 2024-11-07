@@ -4,7 +4,12 @@ import MainFooter from '@/components/main/mainFooter/page'
 import MainTitle from '@/components/main/mainTitle/page'
 
 const Home = () => {
-  const isFriday = new Date().getDay() === 5;
+  // Get the client's local time zone
+  const clientTimeZone = Intl.DateTimeFormat().resolvedOptions().timeZone;
+
+  // Check if today is Friday based on the client's time zone
+  const isFriday = new Date().toLocaleString("en-US", { timeZone: clientTimeZone, weekday: 'long' }) === 'Friday';
+
   return (
     <div className="h-screen overflow-hidden w-full dark:bg-black bg-white dark:bg-dot-white/[0.2] bg-dot-black/[0.2] relative flex items-center justify-center">
 
