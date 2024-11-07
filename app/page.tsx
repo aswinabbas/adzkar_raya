@@ -19,13 +19,12 @@ const Home = () => {
       </div>
 
       {/* Title - Centered in the middle */}
-      <div className="flex flex-col items-center justify-between gap-16 z-10">
+      <div className="flex flex-col items-center justify-between gap-16 z-10 -mt-14">
         <MainTitle />
         <ButtonDzikr />
-        {/* <MainFooter /> */}
       </div>
 
-      <div className="absolute flex justify-start bottom-4 left-4 w-full">
+      <div className="absolute flex justify-start bottom-14 left-4 w-full">
         <MainFooter />
       </div>
     </div>
