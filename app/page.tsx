@@ -20,7 +20,7 @@ const Home = () => {
 
       {/* Mode - Positioned in the top-right corner */}
       <div className="flex justify-between items-center fixed top-4 right-1 w-full px-4">
-        <span className={day === 'Friday' ? 'text-xs text-gray-400 dark:text-gray-500 opacity-95 text-muted-foreground bg-gray-300 dark:bg-gray-100 p-1 px-2 rounded-sm' : 'opacity-0'}>Jangan Lupa perbanyak <span className='font-bold'>shalawat</span> di hari jumat</span>
+        <span className={'text-xs text-gray-400 dark:text-gray-500 opacity-0 text-muted-foreground bg-gray-300 dark:bg-gray-100 p-1 px-2 rounded-sm'}>Jangan Lupa perbanyak <span className='font-bold'>shalawat</span> di hari jumat</span>
         <DarkMode />
       </div>
 
@@ -30,7 +30,7 @@ const Home = () => {
         <ButtonDzikr />
       </div>
 
-      <div className="absolute flex justify-start bottom-14 left-4 w-full">
+      <div className="absolute bottom-14 left-4 w-full">
         <MainFooter />
       </div>
     </div>
